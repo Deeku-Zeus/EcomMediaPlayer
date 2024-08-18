@@ -7,3 +7,6 @@
 [submodule "MediaPlayerFrontend"]
 	path = MediaPlayerFrontend
 	url = https://github.com/Deeku-Zeus/MediaPlayerFrontend.git
+[submodule "VideoFrameAnalyer"]
+	path = VideoFrameAnalyer
+	url = https://github.com/Deeku-Zeus/VideoFrameAnalyer.git
