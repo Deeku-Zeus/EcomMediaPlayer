@@ -1,3 +1,6 @@
 [submodule "EcomAPI"]
 	path = EcomAPI
 	url = https://github.com/Deeku-Zeus/EcomAPI.git
+[submodule "MediaPlayerBackend"]
+	path = MediaPlayerBackend
+	url = https://github.com/Deeku-Zeus/MediaPlayerBackend.git
