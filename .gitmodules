@@ -4,3 +4,6 @@
 [submodule "MediaPlayerBackend"]
 	path = MediaPlayerBackend
 	url = https://github.com/Deeku-Zeus/MediaPlayerBackend.git
+[submodule "MediaPlayerFrontend"]
+	path = MediaPlayerFrontend
+	url = https://github.com/Deeku-Zeus/MediaPlayerFrontend.git
