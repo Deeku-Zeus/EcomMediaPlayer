@@ -1,12 +1,16 @@
 [submodule "EcomAPI"]
 	path = EcomAPI
 	url = https://github.com/Deeku-Zeus/EcomAPI.git
+	ignore = all
 [submodule "MediaPlayerBackend"]
 	path = MediaPlayerBackend
 	url = https://github.com/Deeku-Zeus/MediaPlayerBackend.git
+	ignore = all
 [submodule "MediaPlayerFrontend"]
 	path = MediaPlayerFrontend
 	url = https://github.com/Deeku-Zeus/MediaPlayerFrontend.git
+	ignore = all
 [submodule "VideoFrameAnalyer"]
 	path = VideoFrameAnalyer
 	url = https://github.com/Deeku-Zeus/VideoFrameAnalyer.git
+	ignore = all
