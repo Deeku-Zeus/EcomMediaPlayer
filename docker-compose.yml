@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  ecomapi:
+    build: ./EcomAPI
+    container_name: ecomapi
+    ports:
+      - "8000:9000" # Laravel runs on port 9000 internally
+    volumes:
+      - ./EcomAPI:/var/www
+    networks:
+      - ecomnetwork
+
+  mediaplayerbackend:
+    build: ./MediaPlayerBackend
+    container_name: mediaplayerbackend
+    ports:
+      - "8001:9000" # Laravel runs on port 9000 internally
+    volumes:
+      - ./MediaPlayerBackend:/var/www
+    networks:
+      - ecomnetwork
+
+  mediaplayerfrontend:
+    build: ./MediaPlayerFrontend
+    container_name: mediaplayerfrontend
+    ports:
+      - "3000:3000" # SvelteKit runs on port 3000
+    volumes:
+      - ./MediaPlayerFrontend:/usr/src/app
+    networks:
+      - ecomnetwork
+
+networks:
+  ecomnetwork:
+    driver: bridge
