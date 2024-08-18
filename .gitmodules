@@ -1,0 +1,3 @@
+[submodule "EcomAPI"]
+	path = EcomAPI
+	url = https://github.com/Deeku-Zeus/EcomAPI.git
