@@ -41,7 +41,6 @@ services:
     platform: linux/amd64
     environment:
       MYSQL_ROOT_PASSWORD: rootpasswd
-      MYSQL_DATABASE: mediaBackend
     ports:
       - "3316:3306"
     volumes:
