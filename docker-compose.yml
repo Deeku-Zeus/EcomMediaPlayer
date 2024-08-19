@@ -4,8 +4,9 @@ services:
   ecomapi:
     build: ./EcomAPI
     container_name: ecomapi
+    platform: linux/amd64
     ports:
-      - "8000:9000" # Laravel runs on port 9000 internally
+      - "13445:80"
     volumes:
       - ./EcomAPI:/var/www
     networks:
@@ -14,8 +15,9 @@ services:
   mediaplayerbackend:
     build: ./MediaPlayerBackend
     container_name: mediaplayerbackend
+    platform: linux/amd64
     ports:
-      - "8001:9000" # Laravel runs on port 9000 internally
+      - "13446:80"
     volumes:
       - ./MediaPlayerBackend:/var/www
     networks:
@@ -24,11 +26,26 @@ services:
   mediaplayerfrontend:
     build: ./MediaPlayerFrontend
     container_name: mediaplayerfrontend
+    platform: linux/amd64
     ports:
-      - "3000:3000" # SvelteKit runs on port 3000
+      - "3000:3000"
     volumes:
       - ./MediaPlayerFrontend:/usr/src/app
       - node_modules:/app/node_modules
+    networks:
+      - ecomnetwork
+  
+  mysql:
+    image: mysql:latest
+    container_name: mediaplayerbackend-db
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpasswd
+      MYSQL_DATABASE: mediaBackend
+    ports:
+      - "3316:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
     networks:
       - ecomnetwork
 
