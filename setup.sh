@@ -13,19 +13,19 @@ IFS=',' read -ra ADDR <<< "$choice"
 for i in "${ADDR[@]}"; do
     case $i in
         1)
-            git submodule update --init --recursive EcomAPI
+            git submodule update --remote --merge EcomAPI
             ;;
         2)
-            git submodule update --init --recursive MediaPlayerBackend
+            git submodule update --remote --merge MediaPlayerBackend
             ;;
         3)
-            git submodule update --init --recursive MediaPlayerFrontend
+            git submodule update --remote --merge MediaPlayerFrontend
             ;;
         4)
-            git submodule update --init --recursive VideoFrameAnalyzer
+            git submodule update --remote --merge VideoFrameAnalyzer
             ;;
         5)
-            git submodule update --init --recursive
+            git submodule update --remote --merge
             ;;
     esac
 done
