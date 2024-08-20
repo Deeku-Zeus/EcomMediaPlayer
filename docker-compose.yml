@@ -6,7 +6,7 @@ services:
       context: ./EcomAPI
     container_name: ecomapi
     volumes:
-      - ./EcomApi:/var/www/html
+      - ./EcomAPI:/var/www/html
     ports:
       - "13455:80"
     depends_on:
