@@ -15,9 +15,9 @@ add_to_hosts() {
 }
 
 # Define the hosts to add
-HOSTS="127.0.0.1 awesomemediaplayer.dev
-127.0.0.1 api.awesomemediaplayer.dev
-127.0.0.1 api.ecom.dev"
+HOSTS="127.0.0.1 awesomemediaplayer.local
+127.0.0.1 api.awesomemediaplayer.local
+127.0.0.1 api.ecom.local"
 
 # Loop through each entry and add it
 while IFS=' ' read -r ip_address hostname; do
