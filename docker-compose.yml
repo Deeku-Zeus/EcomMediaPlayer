@@ -51,10 +51,23 @@ services:
     networks:
       - ecomnetwork
 
+  nginx:
+    image: nginx:latest
+    container_name: nginx-proxy
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - ecomapi
+      - mediaplayerbackend
+      - mediaplayerfrontend
+    networks:
+      - ecomnetwork
+
 volumes:
   mysql-data:
   node_modules:
-
 
 networks:
   ecomnetwork:
