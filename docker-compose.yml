@@ -28,7 +28,8 @@ services:
       - ecomnetwork
 
   mysql:
-    image: mysql:latest
+    image: mysql:5.7
+    platform: linux/amd64
     container_name: ecom-db
     environment:
       MYSQL_ROOT_PASSWORD: rootpasswd
