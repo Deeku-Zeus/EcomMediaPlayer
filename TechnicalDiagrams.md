@@ -57,7 +57,7 @@ flowchart TB
 
     %% Display Results
     EcomAPI -->|Sends Product Data| Backend
-    Backend -->|Sends Product Links| Frontend
+    Backend -->|Sends Classifications with Product Links| Frontend
     Frontend -->|Displays Results| User
 
     %% Custom Styling
