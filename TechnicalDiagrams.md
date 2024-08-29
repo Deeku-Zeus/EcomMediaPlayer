@@ -103,3 +103,22 @@ flowchart TB
 
 ```
 
+## Simple Data Flow Diagram
+
+```mermaid
+graph TD
+    A["User Crops Video Frame"] --> B["Image Sent to Backend"]
+    B --> C["Image Classified"]
+    C --> D["Product Search Initiated"]
+    D --> E["Results Returned to Frontend"]
+    E --> F["Products Displayed in Side Panel"]
+
+    %% Styling Nodes
+    style A fill:#A0A0A0,stroke:#306032,stroke-width:2px,color:#fff
+    style B fill:#A0A0A0,stroke:#306032,stroke-width:2px,color:#fff
+    style C fill:#A0A0A0,stroke:#306032,stroke-width:2px,color:#fff
+    style D fill:#A0A0A0,stroke:#306032,stroke-width:2px,color:#fff
+    style E fill:#A0A0A0,stroke:#306032,stroke-width:2px,color:#fff
+    style F fill:#A0A0A0,stroke:#306032,stroke-width:2px,color:#fff
+
+```
