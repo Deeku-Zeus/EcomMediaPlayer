@@ -1,49 +1,45 @@
 ## System Architecture
 
 ```mermaid
-flowchart LR
-    %% Background shape to cover the canvas area
-    subgraph bg[ ]
-    direction LR
-    classDef backgroundStyle fill:#ACE1AF,stroke-width:0px;
-    end
-    bg --> User
+flowchart TB
+    %% Define styles for backgrounds
+    classDef subgraphBg fill:#ACE1AF,stroke:#306032,stroke-width:2px,color:black;
+    classDef nodeStyle fill:white,stroke:#306032,stroke-width:2px,color:black;
+    classDef userStyle fill:#4CAF50,stroke:#306032,stroke-width:2px,color:white;
+    classDef externalApiStyle fill:#f9f9f9,stroke:#306032,stroke-width:2px,color:black;
 
     %% Components
-    User((User)) -->|Interacts with| Frontend[Frontend]
-    Frontend -->|Sends cropped image| Backend[Backend]
-    Backend -->|Stores data| Database[(Database)]
-    Backend -->|Forwards image| VideoAnalyser[Video Analyser]
+    User((User)):::userStyle -->|Interacts with| Frontend[Frontend]:::nodeStyle
+    Frontend -->|Sends cropped image| Backend[Backend]:::nodeStyle
+    Backend -->|Stores data| Database[(Database)]:::nodeStyle
+    Backend -->|Forwards image| VideoAnalyser[Video Analyser]:::nodeStyle
     VideoAnalyser -->|Returns classification tags| Backend
-    Backend -->|Sends tags| EcomAPI[Ecom API]
-    EcomAPI -->|Searches products| EcommerceAPIs[External E-commerce APIs]
+    Backend -->|Sends tags| EcomAPI[Ecom API]:::nodeStyle
+    EcomAPI -->|Searches products| EcommerceAPIs[External E-commerce APIs]:::externalApiStyle
     EcommerceAPIs -->|Returns product data| EcomAPI
     EcomAPI -->|Sends product data| Backend
     Backend -->|Returns product links| Frontend
     Frontend -->|Displays results| User
 
-    %% Containerization
+    %% Containerization with simulated background color
     subgraph Containerized_Environment[Containerized Environment]
         direction TB
-        Frontend
-        Backend
-        Database
-        EcomAPI
+        Frontend:::subgraphBg
+        Backend:::subgraphBg
+        Database:::subgraphBg
+        EcomAPI:::subgraphBg
     end
 
     subgraph Host_System[Host System]
         direction TB
-        VideoAnalyser
+        VideoAnalyser:::subgraphBg
     end
 
-    %% External API
+    %% External API with its own background
     subgraph External_Systems[External Systems]
         direction TB
-        EcommerceAPIs
+        EcommerceAPIs:::externalApiStyle
     end
-
-    %% Applying background style
-    class bg backgroundStyle;
 
 ```
 
