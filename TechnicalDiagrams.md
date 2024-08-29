@@ -85,18 +85,18 @@ flowchart TB
     EcomAPI --- ExternalAPIs;
 
     %% Adding some spacing between the rows
-    subgraph Row_1[ ]
+    subgraph Column_1[ ]
         User
         Frontend
     end
 
-    subgraph Row_2[ ]
+    subgraph Column_2[ ]
         Backend
         Database
         VideoAnalyser
     end
 
-    subgraph Row_3[ ]
+    subgraph Column_3[ ]
         EcomAPI
         ExternalAPIs
     end
