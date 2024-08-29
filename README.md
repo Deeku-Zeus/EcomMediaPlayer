@@ -26,3 +26,7 @@ docker compose up -build -d
 - Frontend - awesomemediaplayer.local
 - Backend - api.awesomemediaplayer.local
 - EcomAPI - api.ecom.local
+
+
+## large assets are here
+https://drive.google.com/drive/folders/1sMNexjtaAFH6J7LAyMwAX9YwCoMfjsjr?usp=drive_link
