@@ -1,36 +1,50 @@
 ## System Architecture
 
 ```mermaid
-flowchart TD
+flowchart LR
+    %% Background shape to cover the canvas area
+    subgraph bg[ ]
+    direction LR
+    classDef backgroundStyle fill:#ACE1AF,stroke-width:0px;
+    end
+    bg --> User
+
     %% Components
-    User -->|Interacts with| Frontend
-    Frontend -->|Sends cropped image| Backend
-    Backend -->|Stores data| Database
-    Backend -->|Forwards image| VideoAnalyser
+    User((User)) -->|Interacts with| Frontend[Frontend]
+    Frontend -->|Sends cropped image| Backend[Backend]
+    Backend -->|Stores data| Database[(Database)]
+    Backend -->|Forwards image| VideoAnalyser[Video Analyser]
     VideoAnalyser -->|Returns classification tags| Backend
-    Backend -->|Sends tags| EcomAPI
-    EcomAPI -->|Searches products| EcommerceAPIs
+    Backend -->|Sends tags| EcomAPI[Ecom API]
+    EcomAPI -->|Searches products| EcommerceAPIs[External E-commerce APIs]
     EcommerceAPIs -->|Returns product data| EcomAPI
     EcomAPI -->|Sends product data| Backend
     Backend -->|Returns product links| Frontend
     Frontend -->|Displays results| User
 
     %% Containerization
-    subgraph Containerized_Environment
+    subgraph Containerized_Environment[Containerized Environment]
+        direction TB
         Frontend
         Backend
         Database
         EcomAPI
     end
 
-    subgraph Host_System
+    subgraph Host_System[Host System]
+        direction TB
         VideoAnalyser
     end
 
     %% External API
-    subgraph External_Systems
+    subgraph External_Systems[External Systems]
+        direction TB
         EcommerceAPIs
     end
+
+    %% Applying background style
+    class bg backgroundStyle;
+
 ```
 
 ## Data Flow Diagram
